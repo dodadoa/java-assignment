@@ -60,6 +60,39 @@ public class Main {
         }
     }
 
+    public static void printDiamondWithName (int numberOfLine, String name) {
+        int startLine = 1;
+        int space = numberOfLine - 1;
+        int numberOfRepeatedAsterisk = 1;
+        int totalLine = (numberOfLine * 2) - 1;
+        while(startLine <= totalLine) {
+            String repeatedAsterisk = new String(new char[numberOfRepeatedAsterisk]).replace("\0", "*");
+            String repeatedSpace = new String(new char[space]).replace("\0", " ");
+            if (startLine == numberOfLine) {
+                System.out.println(name);
+            } else {
+                System.out.println(repeatedSpace + repeatedAsterisk + repeatedSpace);
+            }
+
+            if(startLine >= numberOfLine) {
+                space++;
+                numberOfRepeatedAsterisk = numberOfRepeatedAsterisk - 2;
+                startLine++;
+            } else {
+                space--;
+                if (space < 0) {
+                    space = 0;
+                }
+                numberOfRepeatedAsterisk = numberOfRepeatedAsterisk + 2;
+                startLine++;
+            }
+        }
+    }
+
+    public static void fizzBuzz(int number) {
+        
+    }
+
     public static void main(String[] args) {
         System.out.println('*');
         printAsterisk(3);
@@ -67,5 +100,6 @@ public class Main {
         printRightTriangleAsterisk(4);
         printTriangle(3);
         printDiamond(4);
+        printDiamondWithName(5, "Kiang");
     }
 }
