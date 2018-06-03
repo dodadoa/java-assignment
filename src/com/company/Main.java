@@ -17,10 +17,47 @@ public class Main {
 
     public static void printRightTriangleAsterisk(int numberOfLine) {
         for(int line = 1; line <= numberOfLine; line++) {
-            String repeatedAsterisk = new String(new char[line]).replace("\0", "*");
+            int numberOfRepeatedAsterisk = line;
+            String repeatedAsterisk = new String(new char[numberOfRepeatedAsterisk]).replace("\0", "*");
             System.out.print(repeatedAsterisk + '\n');
         }
 
+    }
+
+    public static void printTriangle (int numberOfLine) {
+        int space = numberOfLine - 1;
+        int numberOfRepeatedAsterisk = 1;
+        while(space >= 0) {
+            String repeatedAsterisk = new String(new char[numberOfRepeatedAsterisk]).replace("\0", "*");
+            String repeatedSpace = new String(new char[space]).replace("\0", " ");
+            System.out.println(repeatedSpace + repeatedAsterisk + repeatedSpace);
+            space--;
+            numberOfRepeatedAsterisk = numberOfRepeatedAsterisk + 2;
+        }
+    }
+
+    public static void printDiamond (int numberOfLine) {
+        int startLine = 1;
+        int space = numberOfLine - 1;
+        int numberOfRepeatedAsterisk = 1;
+        int totalLine = (numberOfLine * 2) - 1;
+        while(startLine <= totalLine) {
+            String repeatedAsterisk = new String(new char[numberOfRepeatedAsterisk]).replace("\0", "*");
+            String repeatedSpace = new String(new char[space]).replace("\0", " ");
+            System.out.println(repeatedSpace + repeatedAsterisk + repeatedSpace);
+            if(startLine >= numberOfLine) {
+                space++;
+                numberOfRepeatedAsterisk = numberOfRepeatedAsterisk - 2;
+                startLine++;
+            } else {
+                space--;
+                if (space < 0) {
+                    space = 0;
+                }
+                numberOfRepeatedAsterisk = numberOfRepeatedAsterisk + 2;
+                startLine++;
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -28,5 +65,7 @@ public class Main {
         printAsterisk(3);
         printLineAsterisk(4);
         printRightTriangleAsterisk(4);
+        printTriangle(3);
+        printDiamond(4);
     }
 }
