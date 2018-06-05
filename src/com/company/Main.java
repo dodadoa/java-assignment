@@ -93,7 +93,6 @@ public class Main {
     }
 
     public static void fizzBuzz() {
-        // NOTE: DRY in this one maybe make it read harder
         for(int num = 1; num <= 100; num++) {
             if(num % 15 == 0) {
                 System.out.println("FizzBuzz");
