@@ -89,7 +89,22 @@ public class Main {
         }
     }
 
-    public static void fizzBuzz(int number) {
+    public static void fizzBuzz() {
+        // NOTE: DRY in this one maybe make it read harder
+        for(int num = 1; num <= 100; num++) {
+            if(num % 15 == 0) {
+                System.out.println("FizzBuzz");
+            } else if(num % 3 == 0) {
+                System.out.println("Fizz");
+            } else if(num % 5 ==0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(num);
+            }
+        }
+    }
+
+    public static void generate(int num) {
         
     }
 
@@ -101,5 +116,7 @@ public class Main {
         printTriangle(3);
         printDiamond(4);
         printDiamondWithName(5, "Kiang");
+        fizzBuzz();
+
     }
 }
