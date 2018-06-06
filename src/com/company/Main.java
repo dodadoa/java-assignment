@@ -9,10 +9,10 @@ public class Main {
         for(int asterisk = 1; asterisk <= numberOfAsterisk; asterisk++) {
             System.out.print('*');
         };
+        System.out.print('\n');
     }
 
     public static void printLineAsterisk(int numberOfLine) {
-        System.out.print('\n');
         for(int line = 1; line <= numberOfLine; line++) {
             System.out.println('*');
         }
